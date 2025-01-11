@@ -17,8 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 //submit button
-const submit = document.getElementById('submit');
-submit.addEventListener("click", function(event){
-    event.preventDefault();
-    alert(5);
-})
+// const submit = document.getElementById('submit');
+// submit.addEventListener("click", function(event){
+//     event.preventDefault();
+//     alert(5);
+// })
