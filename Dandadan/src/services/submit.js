@@ -1,6 +1,5 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 import { auth } from "../config/regester";
-import { validEmail } from "../logic/validEmail";
 
 
 //submit button
@@ -18,7 +17,23 @@ submit.addEventListener("click", function (event) {
     }
 });
 
-export function Submit(event) {
+function validEmail(event){
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@iiserb\.ac\.in$/;
+        const gmailRegex24 = /^[a-zA-Z._%+-]+24@iiserb\.ac\.in$/;
+        if (!gmailRegex.test(email))
+            alert("Enter IISER-B Email ID");
+
+        else {
+            if (!gmailRegex24.test(email))
+                alert("Only for 24 Batch");
+
+            else {
+                Submit(event);
+            }
+        }
+}
+
+function Submit(event) {
     event.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -33,4 +48,4 @@ export function Submit(event) {
             alert(errorMessage);
             // ..
         });
-}``
+}
