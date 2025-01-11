@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-import { auth } from "../config/regester";
+import { auth } from "../config/regester.js";
 
 
 //submit button
