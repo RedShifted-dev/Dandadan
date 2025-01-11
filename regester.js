@@ -19,6 +19,15 @@ const app = initializeApp(firebaseConfig);
 //submit button
 const submit = document.getElementById('submit');
 submit.addEventListener("click", function(event){
-    event.preventDefault();
-    alert(5);
+    // get input
+    const user = document.getElementById('user').value;
+    const email = document.getElementById('mail').value;
+    const password = document.getElementById('password').value;
+
+    // Check if fields are empty
+    if (user && email && password)
+    {
+        event.preventDefault();
+        alert(5);
+    }
 })
