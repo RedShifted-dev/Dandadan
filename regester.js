@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-
+import { getDatabase } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -17,7 +17,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app)
 const auth = getAuth(app);
+
 //submit button
 const submit = document.getElementById('submit');
 submit.addEventListener("click", function(event){
@@ -37,7 +39,7 @@ submit.addEventListener("click", function(event){
         else
         {
             if(!gmailRegex24.test(email))
-                alert("Only for 24 Batch")
+                alert("Only for 24 Batch");
             else
             {
                 event.preventDefault();
@@ -45,12 +47,13 @@ submit.addEventListener("click", function(event){
                 .then((userCredential) => {
                     // Signed up 
                     const user = userCredential.user;
+                    alert("done");
                     // ...
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    alert(errorMessage)
+                    alert(errorMessage);
                     // ..
                 });
             }
