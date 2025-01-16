@@ -14,7 +14,7 @@ submit.addEventListener("click", function (event) {
 
     // Check if fields are empty
     if (user && email && password) {
-        validEmail(email, password);
+        validEmail(email);
     }
 });
 
@@ -25,6 +25,7 @@ export function Submit(email, password) {
             // Signed up 
             const user = userCredential.user;
             alert("done");
+            
             // ...
         })
         .catch((error) => {

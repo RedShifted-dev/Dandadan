@@ -5,12 +5,14 @@ const registerLnik = document.querySelector('.register-link');
 // const iconClose = document.querySelector('.icon-close');
 
 registerLnik.addEventListener('click', ()=> {
-    wrapper.classList.add('active');
+    wrapper.classList.add('activer');
+    wrapper.classList.remove('activel');
 });
 
 loginLnik.addEventListener('click', ()=> {
-    console.log('login');
-    wrapper.classList.remove('active');
+    wrapper.classList.remove('activer');
+    wrapper.classList.add('activel');
+    // wrapper.classList.add('otp');
 });
 
 // btnpopup.addEventListener('click', ()=> {
