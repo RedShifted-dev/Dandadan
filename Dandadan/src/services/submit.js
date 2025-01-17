@@ -33,7 +33,7 @@ submit.addEventListener("click", function (event) {
             const user = userCredential.user;
             setDoc(doc(db, "users", user.uid), {
                 uid: user.uid,
-                user: userName,
+                userName: userName,
                 email: email,
             }).then(() => {
                 alert("done");
